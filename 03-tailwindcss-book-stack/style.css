@@ -1,0 +1,8 @@
+main {
+    align-items: center;
+    border-bottom: 30px #a16207 solid;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end;
+}
