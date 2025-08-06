@@ -30,7 +30,8 @@ body {
     width: 100%;
 }
 
-.counter, #save-el {
+.counter,
+#save-el {
     align-items: center;
     background-color: beige;
     border-radius: 10px;
