@@ -63,13 +63,14 @@ button {
     color: white;
     font-size: 1rem;
     font-weight: bold;
-    margin: 10px;
+    margin: 8px;
     padding: 15px;
     width: 180px;
 }
 
 #increment-btn {
     background: #d23434;
+    margin-top: 25px;
 }
 
 #save-btn {

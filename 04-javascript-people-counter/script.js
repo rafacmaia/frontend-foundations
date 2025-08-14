@@ -7,11 +7,11 @@ let saveEl = document.getElementById('save-el');
 let name = 'Zouzou', greeting = 'Welcome back ';
 let count = 0, saveCounter = 0;
 
-welcomeEl.innerText = greeting + name;
+welcomeEl.textContent = greeting + name;
 welcomeEl.append(' 👋');
 
 function increment() {
-    countEl.innerText = String(++count);
+    countEl.textContent = String(++count);
 }
 
 function save() {
@@ -21,7 +21,8 @@ function save() {
     } else {
         saveEl.textContent += ' – ' + count;
     }
-
+    count = 0;
+    countEl.textContent = String(count);
     saveCounter++;
 }
 
