@@ -18,8 +18,12 @@ function addNewDrink(newDrink: DrinkObj) {
     menu.push(newDrink);
 }
 
-function placeOrder(drinkName : string) {
-    DrinkObj selectedDrink = menu.find(drink => drink.name === drinkName);
+function placeOrder(drinkName: string) {
+    const selectedDrink = menu.find(drink => drink.name === drinkName);
+    if (!selectedDrink) {
+        console.log('Invalid drink name');
+        return;
+    }
     cashInRegister += selectedDrink.price;
     const order = {
         id: nextOrderId++,
@@ -30,18 +34,18 @@ function placeOrder(drinkName : string) {
     return order;
 }
 
-function completeOrder(orderId) {
+function completeOrder(orderId: number) {
     const order = orderQueue.find(order => order.id === orderId);
     order.status = 'completed';
     return order;
 }
 
-addNewCocktail({name: 'Last Word', price: 15});
-addNewCocktail({name: 'Mai Tai', price: 13.5});
-addNewCocktail({name: 'Pisco Sour', price: 14.5});
+addNewDrink({name: 'Last Word', price: 15});
+addNewDrink({name: 'Mai Tai', price: 13.5});
+addNewDrink({name: 'Pisco Sour', price: 14.5});
 
 placeOrder('Pisco Sour');
-completeOrder('1');
+completeOrder(1);
 
 console.log('Menu: ', menu);
 console.log('Cash in register: ', cashInRegister);
